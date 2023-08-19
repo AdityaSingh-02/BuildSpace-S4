@@ -1,17 +1,17 @@
+"use client";
 import React, { useState } from "react";
+import { useUserData } from "@/Context";
 
-interface Props {
-  login: (data: any) => void;
-}
-
-const LoginComponent = (props: Props) => {
+const LoginComponent = () => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
 
+  const { setUserData } = useUserData();
+
   const handleClick = () => {
-    props.login(loginData);
+    setUserData(loginData);
   };
 
   return (

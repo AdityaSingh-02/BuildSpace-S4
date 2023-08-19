@@ -10,7 +10,7 @@ const Create = () => {
     password: "",
   });
 
-  const handleLogin = (data:any) => {
+  const handleLogin = (data: any) => {
     console.log(data);
   };
 
@@ -22,11 +22,7 @@ const Create = () => {
           <button onClick={() => setAction(!Action)}>Sign Up</button>
         </nav>
         <div className="flex justify-center rounded-lg mt-16 w-[60%] h-[70%] bg-gradient-to-b from-cyan-950 to-gray-950">
-          {Action ? (
-            <LoginComponent login={handleLogin} />
-          ) : (
-            <SignupComponent />
-          )}
+          {Action ? <LoginComponent /> : <SignupComponent />}
         </div>
       </main>
     </>

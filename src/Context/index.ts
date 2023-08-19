@@ -1,2 +1,4 @@
-import UserDataProvider from "./Users/UserDataProvider"
-export default UserDataProvider ;
+import UserDataProvider from "./Users/UserDataProvider";
+import { useUserData } from "./Users/UserData";
+export { useUserData };
+export default UserDataProvider;
