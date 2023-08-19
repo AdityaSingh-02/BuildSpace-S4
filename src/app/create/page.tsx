@@ -5,6 +5,15 @@ import { useState } from "react";
 
 const Create = () => {
   const [Action, setAction] = useState(true);
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleLogin = (data:any) => {
+    console.log(data);
+  };
+
   return (
     <>
       <main className="flex flex-col justify-center items-center h-screen ">
@@ -12,8 +21,12 @@ const Create = () => {
           <button onClick={() => setAction(!Action)}>Log in</button>
           <button onClick={() => setAction(!Action)}>Sign Up</button>
         </nav>
-        <div className="flex justify-center rounded-lg mt-16 w-[70%] h-[70%] bg-gradient-to-b from-cyan-950 to-gray-950">
-          {Action ? <LoginComponent /> : <SignupComponent />}
+        <div className="flex justify-center rounded-lg mt-16 w-[60%] h-[70%] bg-gradient-to-b from-cyan-950 to-gray-950">
+          {Action ? (
+            <LoginComponent login={handleLogin} />
+          ) : (
+            <SignupComponent />
+          )}
         </div>
       </main>
     </>
