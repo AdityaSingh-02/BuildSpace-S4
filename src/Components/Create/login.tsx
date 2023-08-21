@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useUserData } from "@/Context";
+import { useUserData, useAuth } from "@/Context";
+import { useRouter } from "next/navigation";
 
 const LoginComponent = () => {
   const [loginData, setLoginData] = useState({
@@ -38,7 +39,9 @@ const LoginComponent = () => {
           }
           className="w-[60%] px-4 py-2 rounded-lg"
         />
-        <button onClick={handleClick}>Login</button>
+        <button onClick={handleClick} className="bg-gray-500 text-gray-100 rounded-lg px-4 py-2">
+          Login
+        </button>
       </div>
     </>
   );
