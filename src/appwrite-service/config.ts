@@ -32,6 +32,22 @@ export class AppwriteService {
     }
   }
 
+  async isLoggedIn(): Promise<boolean> {
+    try {
+      const data = await this.getUserData();
+      return Boolean(data);
+    } catch (err: any) {
+      return false;
+    }
+  }
+
+  async getUserData() {
+    try {
+      return await account.get();
+    } catch (err: any) {}
+    return null;
+  }
+
   async logout() {
     try {
       return await account.deleteSession("current");
@@ -40,3 +56,6 @@ export class AppwriteService {
     }
   }
 }
+
+const appwriteService = new AppwriteService();
+export default appwriteService;
