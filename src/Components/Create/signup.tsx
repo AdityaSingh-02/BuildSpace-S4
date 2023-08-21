@@ -14,6 +14,14 @@ const SignupComponent = () => {
   const router = useRouter();
 
   const handleClick = () => {
+    if (
+      signUpData.password.length < 8 ||
+      signUpData.email.length < 6 ||
+      signUpData.name.length < 2
+    ) {
+      alert("Please fill the appropirate details, password should be atleast 8 char long");
+      return;
+    }
     appwriteService.createAccount(signUpData).then((res) => {
       setAuthStatus(true);
       router.replace("/dashboard");
