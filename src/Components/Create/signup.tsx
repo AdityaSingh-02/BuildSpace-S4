@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { Dispatch, useState } from "react";
 import appwriteService from "@/appwrite-service/config";
 import { useAuth } from "@/Context";
 import { useRouter } from "next/navigation";
 
-const SignupComponent = () => {
+interface Props {
+  setAction: Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SignupComponent: React.FC<Props> = (props: Props) => {
   const [signUpData, setsignUpData] = useState({
     name: "",
     email: "",
@@ -19,7 +23,9 @@ const SignupComponent = () => {
       signUpData.email.length < 6 ||
       signUpData.name.length < 2
     ) {
-      alert("Please fill the appropirate details, password should be atleast 8 char long");
+      alert(
+        "Please fill the appropirate details, password should be atleast 8 char long"
+      );
       return;
     }
     appwriteService.createAccount(signUpData).then((res) => {
@@ -67,6 +73,9 @@ const SignupComponent = () => {
           className="bg-gray-500 text-gray-100 rounded-lg px-4 py-2">
           Sign Up
         </button>
+        <p className="text-gray-400">
+          Already Have an Account? <button onClick={()=> props.setAction(true)} className="text-gray-100" >Login</button>
+        </p>
       </div>
     </>
   );

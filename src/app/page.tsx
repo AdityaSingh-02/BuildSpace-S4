@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-5 md:p-24">
       <div className="text-2xl md:text-5xl p-6">
-        <h1 className="underline text-gray-300">BuildSpace News Letter</h1>
+        <h1 className="underline text-gray-300">JustNews News Letter</h1>
         <p className="text-sm md:text-lg text-teal-500 font-semibold ">
           News Letter Service made easy
         </p>

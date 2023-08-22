@@ -37,7 +37,11 @@ const Create = () => {
           </button>
         </nav>
         <div className="flex justify-center rounded-lg mt-16 w-[60%] h-[70%] bg-gradient-to-b from-cyan-950 to-gray-950">
-          {Action ? <LoginComponent /> : <SignupComponent />}
+          {Action ? (
+            <LoginComponent setAction={setAction} />
+          ) : (
+            <SignupComponent setAction={setAction} />
+          )}
         </div>
       </main>
     </>
