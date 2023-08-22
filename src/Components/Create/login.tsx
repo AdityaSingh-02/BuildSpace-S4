@@ -1,6 +1,8 @@
 "use client";
 import React, { Dispatch, FC, useEffect, useState } from "react";
 import { useUserData } from "@/Context";
+import appwriteService from "@/appwrite-service/config";
+import { useRouter } from "next/navigation";
 
 interface Props {
   setAction: Dispatch<React.SetStateAction<boolean>>;
@@ -12,10 +14,14 @@ const LoginComponent: FC<Props> = (props: Props) => {
     password: "",
   });
 
-  const { setUserData } = useUserData();
+  const router = useRouter();
+  // const { setUserData } = useUserData();
 
   const handleClick = () => {
-    setUserData(loginData);
+    // setUserData(loginData);
+    appwriteService.login(loginData).then((res) => {
+      router.replace("/dashboard");
+    });
   };
 
   return (
@@ -49,7 +55,12 @@ const LoginComponent: FC<Props> = (props: Props) => {
         </button>
         <p className="text-gray-400">
           Don't Have a Account yet?{" "}
-          <button onClick={() => props.setAction(false)} className="text-gray-100" >SignUp</button> now
+          <button
+            onClick={() => props.setAction(false)}
+            className="text-gray-100">
+            SignUp
+          </button>{" "}
+          now
         </p>
       </div>
     </>
