@@ -3,11 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useUserData, useAuth } from "@/Context";
 import { useRouter } from "next/navigation";
 
-interface Props{
-  highLight: boolean;
-}
 
-const LoginComponent = (props: Props) => {
+const LoginComponent = () => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
