@@ -27,7 +27,7 @@ const LoginComponent: FC<Props> = (props: Props) => {
   return (
     <>
       <div className="flex flex-col justify-center items-center space-y-4 text-black w-full">
-        <h1 className="text-gray-400 pb-16 -mt-16 text-3xl">
+        <h1 className="text-gray-400 pb-16 -mt-16 text-xl md:text-3xl px-2 md:px-0">
           Start your personal News Letter from today
         </h1>
         <input
@@ -37,7 +37,7 @@ const LoginComponent: FC<Props> = (props: Props) => {
           onChange={(e) =>
             setLoginData({ ...loginData, email: e.target.value })
           }
-          className="w-[60%] px-4 py-2 rounded-lg"
+          className="md:w-[60%] px-4 py-2 rounded-lg"
         />
         <input
           type="password"
@@ -46,7 +46,7 @@ const LoginComponent: FC<Props> = (props: Props) => {
           onChange={(e) =>
             setLoginData({ ...loginData, password: e.target.value })
           }
-          className="w-[60%] px-4 py-2 rounded-lg"
+          className="md:w-[60%] px-4 py-2 rounded-lg"
         />
         <button
           onClick={handleClick}
