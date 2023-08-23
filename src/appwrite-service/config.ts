@@ -1,6 +1,5 @@
 import config from "./appwrite-config/config";
 import { Account, Client, ID } from "appwrite";
-import type { User } from "@/types/Users";
 
 const appwriteClient = new Client();
 
@@ -11,7 +10,15 @@ appwriteClient
 export const account = new Account(appwriteClient);
 
 export class AppwriteService {
-  async createAccount({ name, email, password }: User) {
+  async createAccount({
+    name,
+    email,
+    password,
+  }: {
+    name: string;
+    email: string;
+    password: string;
+  }) {
     try {
       const newAcc = await account.create(ID.unique(), email, password, name);
       if (newAcc) {
@@ -24,9 +31,9 @@ export class AppwriteService {
     }
   }
 
-  async login({ email, password }: User) {
+  async login({ email, password }: { email: string; password: string }) {
     try {
-      return await account.createEmailSession(email, password);
+      return await account.createEmailSession(email!, password!);
     } catch (err: any) {
       throw new Error(err);
     }

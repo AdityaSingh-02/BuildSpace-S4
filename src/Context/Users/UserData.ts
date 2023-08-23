@@ -8,7 +8,7 @@ interface IUser {
 }
 
 export const UserDataContext = createContext(<IUser>{
-  userData: { email: "", password: "" },
+  userData: { name:"", email: "" },
   setUserData(user) {},
 });
 
