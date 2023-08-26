@@ -9,13 +9,11 @@ interface IProps {
 
 const UserDataProvider = ({ children }: IProps) => {
   const [userData, setUserData] = useState<User>({
-    email: "",
-    password: "",
     name: "",
-    role: "",
+    email: "",
   });
 
-  const UserInfo = (data: User) => {
+  const setUser = (data: User) => {
     setUserData(data);
   };
 
