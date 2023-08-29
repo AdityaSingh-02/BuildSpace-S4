@@ -20,11 +20,11 @@ const dashboard = () => {
     <>
       <div>
         <div className="flex flex-row w-screen h-screen">
-          <div className="w-screen bg-gray-950 p-10">
-            {pageRender === "dashboard" && <Dashboard />}
+          <div className="w-screen bg-gray-950 p-10 overflow-x-hidden overflow-auto">
+            {pageRender === "dashboard" && <Dashboard composeMessage={setPageRender} />}
             {pageRender === "compose" && <Compose />}
           </div>
-          <div className="w-96 bg-gray-900 px-5 py-5">
+          <div className="w-96 bg-gray-900 px-5 py-5 z-10">
             <h1>Aditya's NewsLetter</h1>
             <div className="border-2 border-gray-700 w-[100%] h-96 rounded-lg flex flex-col items-center space-y-4 mt-6 py-4">
               <button
