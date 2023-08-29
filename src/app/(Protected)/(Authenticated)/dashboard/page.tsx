@@ -11,9 +11,10 @@ import { BsFillPencilFill } from "react-icons/bs";
 const dashboard = () => {
   const [pageRender, setPageRender] = useState<string>("Dashboard");
 
-  useEffect(() => {
-    console.log(pageRender)
-  },[pageRender])
+  // Helps in initial render
+  useEffect(()=> {
+    setPageRender("dashboard")
+  },[])
 
   return (
     <>
