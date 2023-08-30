@@ -2,7 +2,11 @@ import React from 'react'
 
 const Compose = () => {
   return (
-    <div>Compose</div>
+    <>
+      <div className="">
+        <h1 className="text-xl font-semibold">Compose</h1>
+      </div>
+    </>
   )
 }
 
