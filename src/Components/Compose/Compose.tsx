@@ -1,6 +1,10 @@
 import React from "react";
+import {useRouter} from 'next/navigation'
 
 const Compose = () => {
+
+  const router = useRouter();
+
   return (
     <>
       <div className="">
@@ -16,6 +20,7 @@ const Compose = () => {
             <option value="Published">Published</option>
             <option value="Scheduled">Scheduled</option>
           </select>
+          <button onClick={()=> router.push("compose") } className="text-md px-6 py-2 font-semibold text-gray-800 rounded-2xl bg-gray-300">Start writing</button>
         </div>
         <div className="flex flex-col items-center justify-center border-2 border-gray-500 h-[500px] my-10 rounded-xl overflow-x-auto px-2"></div>
       </div>
