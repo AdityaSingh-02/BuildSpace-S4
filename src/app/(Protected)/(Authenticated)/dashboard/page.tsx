@@ -20,7 +20,7 @@ const dashboard = () => {
     <>
       <div>
         <div className="flex flex-row w-screen h-screen">
-          <div className="w-screen bg-gray-950 p-10 overflow-x-hidden overflow-auto">
+          <div className="w-screen bg-gray-950 p-10 overflow-x-hidden overflow-auto h-screen">
             {pageRender === "dashboard" && <Dashboard composeMessage={setPageRender} />}
             {pageRender === "compose" && <Compose />}
           </div>
